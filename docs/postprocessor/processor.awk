@@ -33,6 +33,10 @@ BEGIN {
   }
 }
 
+/<body/ {
+  print "<link rel=\"stylesheet\" href=\"/docs/x.y.z/stylesheets/tabs.css\" />"
+}
+
 !/<span class="comment">/ {
   if (firstMatch || !isHeader) {
     print gensub(/(<b class="conum">)\(([0-9]+)\)(<\/b>)/,
